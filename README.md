@@ -40,11 +40,7 @@
   - **download the pretrained model**
 
     ```
-    dropbox url:https://www.dropbox.com/s/4pe3j2swf2cwvik/lipreading_LRW.pt?dl=0
-    verification code: zxzs23
-    
-    Baidu clouddisk url：https://pan.baidu.com/s/1SeJyQ3aBsGz2O_YCU3X1LQ
-    verification code：4chh
+    resources_link waiting…
     ```
 
     The pretrained model needs to be placed on the spectific path
@@ -56,30 +52,12 @@
       - **midfield**
       
     ```
-    dropbox url:https://www.dropbox.com/s/g6pst3fr5a13m8y/misp2021_task1_roi_midfield.zip?dl=0
-    verification code: zxzs23
-    
-    Baidu Netdisk url：https://pan.baidu.com/s/1XSWBDx08EQR3aP1j2TXhXg
-    verification code：6pyk 
-    
-    MD5：581ec2a5daba9ee16c03ea022577b69a
+    resources_link waiting…
     ```
       - **far-field**         
 
     ```    
-    misp2021_task1_roi_farfield.zip 
-    dropbox url:https://www.dropbox.com/s/0gn4djyzsp2yzr1/misp2021_task1_roi_farfield.zip?dl=0
-    verification code: zxzs   
-    Baidu Netdisk url：https://pan.baidu.com/s/1v5BANcgt1lk8OikUCUxL5g
-    verification code：zxzs
-    MD5: b6d84a6aaa10ff5d72d7381c9758860b    
-    
-    lip_npy_far.zip
-    dropbox url:https://www.dropbox.com/s/db68266ck3rlk43/lip_npy_far.zip?dl=0
-    verification code: zxzs
-    Baidu Netdisk url：https://pan.baidu.com/s/1v5BANcgt1lk8OikUCUxL5g
-    verification code：zxzs    
-    MD5：1dbb0f589fff40cbafa0c9be88aa93a3 
+    resources_link waiting…
     ```
 
      
