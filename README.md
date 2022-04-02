@@ -37,27 +37,15 @@
 
         We provide a simple tool to add noise with different signal-to-noise ratio. In our configuration, the reverberated speech is corrupted by the collected noise at seven signal-to-noise ratios (from -15dB to 15dB with a step of 5dB).
 
-  - **download the pretrained model**
-
-    ```
-    resources_link waiting…
-    ```
-
     The pretrained model needs to be placed on the spectific path
     
     ```
     ${task1_baseline}/kws_net_only_video/model/pretrained/lipreading_LRW.pt
     ```
-  - **download coordinate information used to crop ROI**
-      - **midfield**
-      
-    ```
-    resources_link waiting…
-    ```
-      - **far-field**         
+  - **download database**      
 
     ```    
-    resources_link waiting…
+    https://challenge.xfyun.cn/misp_dataset
     ```
 
      
@@ -68,18 +56,6 @@
 - **Video Wake Word Spotting**
 
     To get visual embeddings, we firstly crop mouth ROIs from video streams, then use the [lipreading TCN](https://github.com/mpc001/Lipreading_using_Temporal_Convolutional_Networks)  to extract 512-dimensional features. The extracted features are input into the same network structure as the audio network.
-
-## Results
-
-  After adjusting different thresholds, the system performances are as follows:
-
-| Modality       | Scenario    | FRR     | FAR    | Score  |
-| -------------- | ----------- | ------- | -------|-------|
-| Audio   | Middle      |  0.07   | 0.08   | 0.15   |
-| Audio   | Far         |  0.18   | 0.09   |  0.27| 
-| Video   | Middle      | 0.12|0.21 |0.33 | 
-| Audio-visual | Middle      |  0.07 | 0.06 | 0.13 |
-| Audio-visual | Far         |  0.12 | 0.14 | 0.26 |
 
 
 ## Setting Paths
