@@ -11,13 +11,13 @@
 
     For the video system, the same network structure is adopted as the audio network. Only middle field video is used to train the video system.
     
-    For fusion, we consider late fusion, that is, the mean of the a posteriori probability of the network output of audio and video is used to calculate the final score.
+    For fusion, we consider late fusion. Specifically, the output posterior probabilities from audio-only and video-only systems are weighted and selected to calculate the final audio-visual final score.
 
 - **preparation**
 
   - **prepare data directory**
 
-      For training, development, and test sets, we prepare data directories by extracting the downloaded zip compressed file to the current folder.
+      For training, development, and evaluation sets, we prepare data directories by extracting the downloaded zip compressed file to the current folder.
 
       ```
       unzip  -d ./  *.zip
