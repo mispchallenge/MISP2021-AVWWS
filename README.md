@@ -2,7 +2,7 @@
 
 - **Introduction**
 
-    This is the baseline system for the Multimodal Information Based Speech Processing Challenge 2021 (MISP2021) challenge task 1. This task concerns the identification of predefined wake word(s) in utterances. ‘1’ indicates that the sample contains wake word, and ‘0’ indicates the opposite. For a more detailed description see MISP Challenge task description.
+    This is the system open source code of the manuscript entitled "Audio-Visual Wake Word Spotting in MISP2021 Challenge: Dataset Release and Deep Analysis". In the paper, we describe and release publicly the audio-visual wake word spotting (WWS) database in the MISP2021 Challenge. The task concerns the identification of predefined wake word(s) in utterances. ‘1’ indicates that the sample contains wake word, and ‘0’ indicates the opposite. For a more detailed description see MISP Challenge task description.
 
 
 - **System description**
