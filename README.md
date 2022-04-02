@@ -9,7 +9,7 @@
 
     The audio system implements a neural network (NN) based approach, where filter bank features are first extracted for each sample, and a network consisting of CNN layers, LSTM layer and fully connected layers are trained to assign labels to the audio samples.
 
-    For the video system, the same network structure is adopted as the audio network. Only middle field video is used to train the video system.
+    For the video system, the same network structure is adopted as the audio network. 
     
     For fusion, we consider late fusion. Specifically, the output posterior probabilities from audio-only and video-only systems are weighted and selected to calculate the final audio-visual final score.
 
