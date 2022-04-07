@@ -13,6 +13,7 @@ from tqdm import tqdm
 sys.path.append("..")
 from tools import utils
 from model.video_kwsnet import KWS_Net
+from reader.data_reader_video_train import myDataLoader_train, myDataset_train
 from reader.data_reader_video import myDataLoader, myDataset
 
 def main(args):
@@ -23,7 +24,8 @@ def main(args):
     seed_torch(args.seed)
 
     # load mean and var
-    lip_train_mean_var = np.load('scp_dir/train_mean_var_lip.npz')
+    lip_train_mean_var = np.load('scp_dir/train_mean_var_lip_only_mid.npz') # only mid-field
+    # lip_train_mean_var = np.load('scp_dir/train_mean_var_lip_only_far.npz') # only far-field
     lip_train_mean = lip_train_mean_var['_mean']
     lip_train_var = lip_train_mean_var['_var']
 
@@ -35,9 +37,9 @@ def main(args):
     
     # define the dataloader
     print("loading the dataset ...")
-    dataset_train = myDataset(file_train_positive_path, file_train_negative_path, lip_train_mean, lip_train_var)
+    dataset_train = myDataset_train(file_train_positive_path, file_train_negative_path, lip_train_mean, lip_train_var)
     dataset_dev = myDataset(file_dev_positive_path, file_dev_negative_path, lip_train_mean, lip_train_var)
-    dataloader_train = myDataLoader(dataset=dataset_train,
+    dataloader_train = myDataLoader_train(dataset=dataset_train,
                             batch_size=args.minibatchsize_train,
                             shuffle=True,
                             num_workers=args.train_num_workers)
