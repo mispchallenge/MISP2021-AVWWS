@@ -30,11 +30,17 @@ def main(args):
     lip_train_var = lip_train_mean_var['_var']
 
     # file path
-    file_train_positive_path = 'scp_dir/positive_train.scp'
-    file_train_negative_path = 'scp_dir/negative_train.scp'
-    file_dev_positive_path = 'scp_dir/positive_dev.scp'
-    file_dev_negative_path = 'scp_dir/negative_dev.scp'
+    file_train_positive_path = 'scp_dir/positive_train_mid.scp'
+    file_train_negative_path = 'scp_dir/negative_train_mid.scp'
+    file_dev_positive_path = 'scp_dir/positive_dev_mid.scp'
+    file_dev_negative_path = 'scp_dir/negative_dev_mid.scp'
     
+    # # file path
+    # file_train_positive_path = 'scp_dir/positive_train_far.scp'
+    # file_train_negative_path = 'scp_dir/negative_train_far.scp'
+    # file_dev_positive_path = 'scp_dir/positive_dev_far.scp'
+    # file_dev_negative_path = 'scp_dir/negative_dev_far.scp'
+     
     # define the dataloader
     print("loading the dataset ...")
     dataset_train = myDataset_train(file_train_positive_path, file_train_negative_path, lip_train_mean, lip_train_var)
@@ -158,7 +164,7 @@ if __name__=="__main__":
     # Arguement Parser
     parser = argparse.ArgumentParser()
     parser.add_argument("--lr", default=5e-5, type=float, help="learning rate")
-    parser.add_argument("--minibatchsize_train", default=16, type=int)
+    parser.add_argument("--minibatchsize_train", default=8, type=int)
     parser.add_argument("--minibatchsize_dev", default=1, type=int)
     parser.add_argument("--input_dim", default=256, type=int)
     parser.add_argument("--hidden_sizes", default=256, type=int)
