@@ -79,10 +79,31 @@ def main(args):
         for video_feature, data_label_torch, current_frame in dataloader_train:
             video_feature = video_feature.cuda()
             data_label_torch = data_label_torch.cuda()
+            
+            video_feature = video_feature.permute(1, 0, 2, 3)
+            # generate mixed inputs, two one-hot label vectors and mixing coefficient
+            inputs_m = video_feature[0:int(video_feature.shape[0]*0.9), :,:,:]
+            targets_m = data_label_torch[0:int(video_feature.shape[0]*0.9)]
+            inputs_nm = video_feature[int(video_feature.shape[0]*0.9):, :,:,:]
+            targets_nm = data_label_torch[int(video_feature.shape[0]*0.9):]
+            
+            inputs_m, targets_a, targets_b, lam = utils.mixup_data(inputs_m, targets_m, 1.0)
+
+            optimizer.zero_grad()
+            new_inputs = torch.cat((inputs_m, inputs_nm), 0)
+            assert new_inputs.shape == video_feature.shape
+            
+            # new_inputs, targets_a, targets_b = Variable(new_inputs), Variable(targets_a), Variable(targets_b)
+            
+            outputs = nnet(new_inputs.permute(1, 0, 2, 3), current_frame)
+            loss_func = utils.mixup_criterion(targets_a, targets_b, lam)
+            loss_m = loss_func(BCE_loss, outputs[0:int(video_feature.shape[0]*0.9)])
+            loss_nm = BCE_loss(outputs[int(video_feature.shape[0]*0.9):], targets_nm)
+            loss = (0.9*loss_m + 0.1*loss_nm)
+            
             outputs = nnet(video_feature, current_frame)
             loss = BCE_loss(outputs, data_label_torch)
 
-            optimizer.zero_grad()
             loss.backward()
             optimizer.step()
 
