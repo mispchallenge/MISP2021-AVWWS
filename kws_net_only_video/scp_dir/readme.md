@@ -1,0 +1,1 @@
+The directory stores the file list and the calculated mean and variance by using create_ scp.py and get_mean_var_lip.py two scripts.
