@@ -3,6 +3,7 @@ from scipy.io import wavfile
 from network_feature_extract import FilterBank
 import torch
 from tqdm import tqdm
+import argparse,os
 def readfile(_path):
 	tmp_list = []
 	with open(_path) as fh:
@@ -73,13 +74,18 @@ def fbank_cmvn(trainlist):
 	fbank_std = torch.sqrt(fbank_std - fbank_mean ** 2)
 	return frames_count, fbank_mean.numpy(), fbank_std.numpy()
 
-trainset_positive = readfile('scp_dir/positive_train.scp')
-trainset_negative = readfile('scp_dir/negative_train.scp')
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--root_path', type=str, default='/yrfs1/intern/gzzou2/MISP_TEST', help='root path')
+args = parser.parse_args()
+root_path = args.root_path
+
+
+trainset_positive = readfile(os.path.join(root_path,'positive_train.scp'))
+trainset_negative = readfile(os.path.join(root_path,'negative_train.scp'))
 trainset =  trainset_negative+trainset_positive
 
-# _, fb40_mean, fb40_var=fbank_cmvn(trainset[:600])
 fb40_mean, fb40_var=get_mean_dev_audio(trainset)
 fb40_mean = fb40_mean.astype('float32')
 fb40_var = fb40_var.astype('float32')
-np.savez('scp_dir/train_mean_var_fb40_.npz',_mean=fb40_mean,_var=fb40_var)
+np.savez(os.path.join(root_path,'train_mean_var_fb40_.npz'),_mean=fb40_mean,_var=fb40_var)
