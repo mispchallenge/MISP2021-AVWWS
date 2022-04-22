@@ -19,7 +19,7 @@ import torch.distributed as dist
 import torch.utils.data.distributed
 
 
-# python -m torch.distributed.launch --nproc_per_node=4 --master_port=12335 main.py
+# python -m torch.distributed.launch --nproc_per_node=4 --master_port=12335 train.py
 def main(args):
     use_cuda = args.use_cuda    
     gpu_id,gpu_ids = 0,args.gpu_id   
