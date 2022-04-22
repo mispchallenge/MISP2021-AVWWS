@@ -79,6 +79,8 @@ python_path=
 data_root=
 # Defining path to python interpreter
 python_path=
+# Defining data directory after data enhancement
+root_path=
 ```
 
 - **kws_net_only_video**
