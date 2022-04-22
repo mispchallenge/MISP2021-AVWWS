@@ -1,5 +1,5 @@
 set -e
-cd submit
+cd data_prepare
 
 python_path=  # e.g. ./python/bin/
 root_path=  # e.g.  save data dir
