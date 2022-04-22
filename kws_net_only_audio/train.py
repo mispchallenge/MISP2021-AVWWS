@@ -19,7 +19,7 @@ import torch.distributed as dist
 import torch.utils.data.distributed
 
 
-# python -m torch.distributed.launch --nproc_per_node=4 --master_port=12335 train.py
+# python -m torch.distributed.launch --nproc_per_node=4 --master_port=12335 main.py
 def main(args):
     use_cuda = args.use_cuda    
     gpu_id,gpu_ids = 0,args.gpu_id   
@@ -27,6 +27,7 @@ def main(args):
     if use_cuda:
         init_dist(args, gpu_ids)     
         gpu_id = gpu_ids[args.local_rank]
+
     model_path = args.project
     log_dir = args.logdir
     logger = utils.get_logger(log_dir + '/' + args.project)
@@ -39,6 +40,7 @@ def main(args):
 
     file_train_positive_path = os.path.join(root_path,'positive_train.scp')   
     file_train_negative_path = os.path.join(root_path,'negative_train.scp')
+    
     file_dev_positive_far_path = os.path.join(root_path,'dev_positive_far.scp')
     file_dev_negative_far_path = os.path.join(root_path,'dev_negative_far.scp')
     
@@ -217,6 +219,8 @@ def seed_torch(seed=42):
     torch.backends.cudnn.benchmark = False
     torch.backends.cudnn.enabled = True
 
+
+
 if __name__=="__main__":
     # Arguement Parser
     parser = argparse.ArgumentParser()
@@ -224,7 +228,7 @@ if __name__=="__main__":
     parser.add_argument("--lr_scheduler",default=0.7,type=int)
     parser.add_argument("--minibatchsize_train", default=64, type=int)  # 64改为150
     parser.add_argument("--minibatchsize_dev", default=1, type=int)
-    parser.add_argument("--logdir", default='./log/', type=str)
+    parser.add_argument("--logdir", default='log', type=str)
     parser.add_argument("--input_dim", default=256, type=int)
     parser.add_argument("--hidden_sizes", default=256, type=int)
     parser.add_argument("--output_dim", default=1, type=int)
