@@ -1,6 +1,6 @@
 import numpy as np 
 from scipy.io import wavfile
-from network_feature_extract import FilterBank
+from tools.network_feature_extract import FilterBank
 import torch
 from tqdm import tqdm
 import argparse,os
