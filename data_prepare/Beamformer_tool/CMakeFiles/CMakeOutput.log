@@ -1,0 +1,27 @@
+The system is: Linux - 3.10.0-327.el7.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/yrfs1/intern/hszhou2/Project_KWS_2021_MISP_Challenge/final_data_configuration_version1/BeamformIt_master/CMakeFiles/3.2.2/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/yrfs1/intern/hszhou2/Project_KWS_2021_MISP_Challenge/final_data_configuration_version1/BeamformIt_master/CMakeFiles/3.2.2/CompilerIdCXX/a.out"
+
