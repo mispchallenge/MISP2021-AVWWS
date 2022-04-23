@@ -69,7 +69,7 @@
 data_root=
 # Defining path to python interpreter
 python_path=
-# Defining data directory after data enhancement
+# Define the data directory after data expansion
 root_path=
 ```
 
@@ -81,7 +81,7 @@ root_path=
 data_root=
 # Defining path to python interpreter
 python_path=
-# Defining data directory after data enhancement
+# Define the data directory after data expansion
 root_path=
 ```
 
