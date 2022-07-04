@@ -1,4 +1,4 @@
-## MISP2021 Task 1 - Wake word spottig (WWS) baseline systems
+## Audio-Visual Wake Word Spotting in MISP2021 Challenge: Dataset Release and Deep Analysis
 
 - **Introduction**
 
