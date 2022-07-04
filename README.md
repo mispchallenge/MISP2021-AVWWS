@@ -1,4 +1,4 @@
-## Audio-Visual Wake Word Spotting in MISP2021 Challenge: Dataset Release and Deep Analysis
+# Audio-Visual Wake Word Spotting in MISP2021 Challenge: Dataset Release and Deep Analysis
 
 - **Introduction**
 
